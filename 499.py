@@ -7,6 +7,37 @@ import numpy as np
 import seaborn as sns
 import pandas as pd
 
+
+def mergeImages():
+    import matplotlib.pyplot as plt
+  import numpy as np
+  edge_dir = "/content/drive/My Drive/M499/3"
+  original_dir = "/content/drive/My Drive/M499/tranch3/tranch3"
+  import os
+  for ori in sorted(os.listdir(original_dir)):
+      ori_img = plt.imread(os.path.join(original_dir,ori))
+    file_name = ori.rsplit(".")[0]
+    edge_img = None
+    for edge in sorted(os.listdir(edge_dir)):
+        edge_file_name = edge.rsplit(".")[0]
+      if (edge_file_name == file_name):
+          edge_img = plt.imread(os.path.join(edge_dir, edge))
+        break
+    if edge_img is not None:
+        X = np.zeros(edge_img.shape + (4,))
+      X[...,:3] = ori_img
+      X[...,-1] = edge_img
+      try:
+          plt.imsave("/content/drive/My Drive/M499/merge3/" + file_name + ".png", X)
+      except ValueError as e: # 0-255 as jpg, but should be 0-1
+          X = np.zeros(edge_img.shape + (4,))
+        X[...,:3] = ori_img / 255
+        X[...,-1] = edge_img / 255
+        plt.imsave("/content/drive/My Drive/M499/merge3/" + file_name + ".png", X)
+    else:
+        print(ori, "not found")
+
+
 """# team2net"""
 
 merge_dir = "/content/drive/My Drive/M499/merge3/"
@@ -220,9 +251,9 @@ team2net34.summary()
 def train_model(model):
   from datetime import datetime
   import json
-  
+
   save_dir = "/content/drive/My Drive/model/team2net"
- 
+
   # Reduce learning rate when there is a change lesser than <min_delta> in <val_accuracy> for more than <patience> epochs
   reduce_lr = tf.keras.callbacks.ReduceLROnPlateau(monitor = 'val_accuracy',
                                                   mode = 'max',
@@ -232,7 +263,7 @@ def train_model(model):
                                                   verbose = 1,
                                                   cooldown = 0,
                                                   min_lr = 0.00000001)
- 
+
   # Stop the training process when there is a change lesser than <min_delta> in <val_accuracy> for more than <patience> epochs
   early_stopper = tf.keras.callbacks.EarlyStopping(monitor = 'val_accuracy',
                                                   mode = 'max',
@@ -240,10 +271,10 @@ def train_model(model):
                                                   patience = 13,
                                                   verbose = 1,
                                                   restore_best_weights = True)
-  
+
 
   txt_log = open(save_dir+".log", mode='wt', buffering=1)
-  
+
   log_callback = tf.keras.callbacks.LambdaCallback(
     on_epoch_end = lambda epoch, logs: txt_log.write(
       json.dumps({'epoch': epoch, 'loss': logs['loss']}) + '\n'),
@@ -251,7 +282,7 @@ def train_model(model):
   )
 
 
-  his = model.fit(train_gen, 
+  his = model.fit(train_gen,
       steps_per_epoch=171,
       epochs=60,
       callbacks=[
