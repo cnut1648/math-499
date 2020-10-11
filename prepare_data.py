@@ -5,6 +5,8 @@ import pandas as pd
 import numpy as np
 import albumentations as A
 
+from ImageDataAugmentor.image_data_augmentor import *
+
 
 def getData(tranch: int, test_size = 0.33) -> pd.DataFrame:
   labels = pd.read_csv(os.path.join(label_dir, f"tranch{tranch}_labels.csv"))
