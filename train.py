@@ -1,12 +1,12 @@
 import tensorflow as tf
 import numpy as np
-!pip install git+https://github.com/mjkvaak/ImageDataAugmentor
 from ImageDataAugmentor.image_data_augmentor import *
 import pandas as pd
 import config
-from prepare_data import getData, get_random_eraser, AUGMENTATIONS
+from prepare_data import getData, get_random_eraser, AUGMENTATIONS, getGenerator
 from tensorflow.keras.layers import (GlobalAveragePooling2D, 
             Dropout, Dense, BatchNormalization)
+from tensorflow.keras import layers, models
 from tensorflow.keras import optimizers, losses
 from tensorflow.keras.applications import MobileNetV2, mobilenet_v2
 from tensorflow.keras.applications import EfficientNetB0, efficientnet
@@ -147,7 +147,7 @@ def train(ensemble_num = 15):
     for tranch in range(1, 4):
         print(f"~~~~~~      tranch {tranch}       ~~~~~~~")
         print()
-        img_dir = os.path.join(config.img_dir, str(tranch))
+        img_dir = os.path.join(config.img_dir, f"tranch{tranch}")
         gens = getGenerator(
                             *getData(tranch), # tranch train & test
                             tranch_image_path = img_dir,

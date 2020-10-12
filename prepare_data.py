@@ -98,7 +98,6 @@ def getGenerator( train: pd.DataFrame, test:  pd.DataFrame,
                  AUGMENTATIONS: "augment_func" = AUGMENTATIONS
                  ):
   
-  
   custom_preprocess = lambda img: model_preprocess(eraser()(img))
   
   

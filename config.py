@@ -9,7 +9,7 @@ zip_dir = "/content/drive/My Drive/M499/" # dir that contains images zip files
                                           # eg. zip_dir/persons-posture-tranch1.zip
 
 img_dir = "/content/drive/My Drive/M499/" # dir that contains images folders,
-                                          # imgs from tranch t must be in subfolder img_dir/t
+                                          # imgs from tranch t must be in subfolder img_dir/tranch<t>
                                           
                                           
 save_dir = "/content/drive/My Drive/model" # base dir to which model would be saved
