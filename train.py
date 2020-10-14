@@ -4,6 +4,7 @@ from ImageDataAugmentor.image_data_augmentor import *
 import pandas as pd
 import config
 from prepare_data import getData, get_random_eraser, AUGMENTATIONS, getGenerator
+,,import matplotlib.pyplot as plt
 from tensorflow.keras.layers import (GlobalAveragePooling2D,
             Dropout, Dense, BatchNormalization)
 from tensorflow.keras import layers, models
