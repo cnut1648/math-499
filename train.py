@@ -168,7 +168,28 @@ def train(ensemble_num = 15):
                         epochs = config.EPOCHS
                         )
 
+def trainAll():
+    print("training all tranchs")
+    for modelstr in ["EfficientNetB0", "MobileNetV2"]:
+        print("++++++++++++++++++++++++++++++++++++++++++++++")
+        print("running for model", modelstr)
+        print("++++++++++++++++++++++++++++++++++++++++++++++")
+        MODEL = trainModel(modelstr)
+        img_dir = os.path.join(config.img_dir, "allTranch")
+        gens = getGenerator(
+                    *getData("all"), # tranch train & test
+                    tranch_image_path = img_dir,
+                    model_preprocess = MODEL.getPreprocessFunc(),
+                    eraser = get_random_eraser,
+                    AUGMENTATIONS = AUGMENTATIONS
+                    )
+        save_dir = os.path.join(config.save_dir, "all", "{modelstr}")
 
+        train_model(MODEL.newModel(),
+                    *gens,
+                    save_dir = save_dir,
+                    epochs = config.EPOCHS
+                    )
 
 if __name__ == '__main__':
     # GPU settings
@@ -177,4 +198,7 @@ if __name__ == '__main__':
         for gpu in gpus:
             tf.config.experimental.set_memory_growth(gpu, True)
 
-    train(config.ensemble_num)
+    if config.train_for_all:
+        trainAll()
+    else:
+        train(config.ensemble_num)

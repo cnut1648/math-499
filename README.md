@@ -15,7 +15,8 @@ import config
 import prepare_data
 import train
 
-
 train.train(config.ensemble_num)
+# or train for all tranches
+train.trainAll()
 ```
 

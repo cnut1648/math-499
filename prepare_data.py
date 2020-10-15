@@ -1,5 +1,5 @@
 from sklearn.model_selection import train_test_split
-from config import label_dir, zip_dir, BATCH_SIZE
+from config import label_dir, BATCH_SIZE
 import os
 import pandas as pd
 import numpy as np
@@ -8,7 +8,13 @@ import albumentations as A
 from ImageDataAugmentor.image_data_augmentor import *
 
 
-def getData(tranch: int, test_size=0.33) -> pd.DataFrame:
+def getData(tranch: int, test_size=0.2) -> pd.DataFrame:
+    if tranch == "all":
+        train1, test1 = getData(1, test_size)
+        train2, test2 = getData(2, test_size)
+        train3, test3 = getData(3, test_size)
+        return pd.concat([train1, train2, train3]), pd.concat([test1, test2, test3])
+    
     labels = pd.read_csv(os.path.join(label_dir, f"tranch{tranch}_labels.csv"))
     df = labels
     if tranch == 1:
