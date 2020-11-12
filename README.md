@@ -1,7 +1,9 @@
 ## Team2 Final Model
 
 
-***Contributors:*** 
+***Contributors:*** Daniel Chaderjian, Jiashu Xu, Phillip Bliss, Sydney Yu, Terry Lu.
+
+---
 
 **Architecture:** EfficientNetB0/MobileNet
 
