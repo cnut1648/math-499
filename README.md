@@ -19,7 +19,7 @@ You're sections headers will be used to reference location of destination.
 
 ## Description
 
-This project trains on convolution networks with over ~30000 medical images provided by LookDeep Inc. The goal of this project is to determine whether the person of interest is either 1.Standin, 2.Sitting, or 3.Lying. 
+This project trains on convolution networks with over ~40000 medical images provided by LookDeep Inc. The goal of this project is to determine whether the person of interest is either 1.Standin, 2.Sitting, or 3.Lying. 
 
 #### Archetectures
 
@@ -33,6 +33,10 @@ This project trains on convolution networks with over ~30000 medical images prov
 
 ## How To Use
 
+The execution of this code requires the change of label_dir,img_dir, and save_dir in config.py.
+- label_dir: the directory that contains the labeling csv files
+- img_dir: the directory that contains all of the testing images, where images from tranch t must be in subfolder img_dir/tranch<t> and images for all tranchs must be in subfolder img_dir/allTranch.
+- save_dir: the directory used to save model checkpoints in save_dir/<tranch>/<model type>-<ensemble num>.<epoch>-<val acc>.h5
 
 
 #### Installation
