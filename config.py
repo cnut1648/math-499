@@ -1,5 +1,7 @@
 EPOCHS = 60
 BATCH_SIZE = 32
+
+# the number of models to train per execution
 ensemble_num = 15
 
 # train for all tranches
