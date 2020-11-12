@@ -1,22 +1,16 @@
-# math-499
+***Team2 Final Model***
 
-team2net
+##Contributors: 
+
+Architecture: EfficientNetB0/MobileNet 
+
+---
+
+##Instructions:
+
+To run our code, change the label_dir, img_dir, and save_dir as directed in config.py
+
+The default epoch is 60, batch size is 32, and ensemble_num is 15.
 
 
-
-if on google colab
-
-```python
-!git clone https://github.com/cnut1648/math-499.git
-!pip install git+https://github.com/mjkvaak/ImageDataAugmentor
-import sys
-sys.path.append('/content/math-499')
-import config
-import prepare_data
-import train
-
-train.train(config.ensemble_num)
-# or train for all tranches
-train.trainAll()
-```
 
