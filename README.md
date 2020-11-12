@@ -19,14 +19,15 @@ You're sections headers will be used to reference location of destination.
 
 ## Description
 
-This project trains on conlutional networks with over ~30000 medical images provided by LookDeep Inc. The goal of this project is to determine whether the person of interest is either 1.Standin, 2.Sitting, or 3.Lying. 
+This project trains on convolution networks with over ~30000 medical images provided by LookDeep Inc. The goal of this project is to determine whether the person of interest is either 1.Standin, 2.Sitting, or 3.Lying. 
 
 #### Archetectures
 
 - MobileNet 
 - EfficientNetB0 
+- Team2Net
 
-[Back To The Top](#read-me-template)
+
 
 ---
 
@@ -37,19 +38,36 @@ This project trains on conlutional networks with over ~30000 medical images prov
 #### Installation
 
 Required Packages: 
-- 
+- `tensorflow 2.3` 
+
+- `albumentation`
+
+- [`imagedataaugmenter`](https://github.com/mjkvaak/ImageDataAugmentor) 
+
+  Fork of Keras image data generator which supports the 3rd party data augmentation modules
 
 #### API Reference
 
 ```html
     <p>dummy code</p>
 ```
-[Back To The Top](#read-me-template)
+
 
 ---
 
 ## References
-[Back To The Top](#MATH499-Final-Project-Team2)
+
+- Buslaev, A., Parinov, A., Khvedchenya, E., Iglovikov, V., & Kalinin, A. (2018, September 18). Albumentations: Fast and flexible image augmentations. Retrieved November 12, 2020, from https://arxiv.org/abs/1809.06839
+
+- He, K., Zhang, X., Ren, S., & Sun, J. (2015, December 10). Deep Residual Learning for Image Recognition. Retrieved November 12, 2020, from https://arxiv.org/abs/1512.03385
+
+- Huang, G., Liu, Z., Van der Maaten, L., & Weinberger, K. (2018, January 28). Densely Connected Convolutional Networks. Retrieved November 12, 2020, from https://arxiv.org/abs/1608.06993
+
+- Sandler, M., Howard, A., Zhu, M., Zhmoginov, A., & Chen, L. (2019, March 21). MobileNetV2: Inverted Residuals and Linear Bottlenecks. Retrieved November 12, 2020, from https://arxiv.org/abs/1801.04381
+
+- Tan, M., & Le, Q. (2020, September 11). EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks. Retrieved November 12, 2020, from https://arxiv.org/abs/1905.11946
+
+- Zhong, Z., Zheng, L., Kang, G., Li, S., & Yang, Y. (2017, November 16). Random Erasing Data Augmentation. Retrieved November 12, 2020, from https://arxiv.org/abs/1708.04896[](#MATH499-Final-Project-Team2)
 
 ---
 
