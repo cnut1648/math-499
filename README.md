@@ -1,12 +1,12 @@
 ***Team2 Final Model***
 
-#Contributors: 
+## Contributors: 
 
-Architecture: EfficientNetB0/MobileNet 
+**Architecture: EfficientNetB0/MobileNet 
 
 ---
 
-#Instructions:
+## Instructions:
 
 To run our code, change the label_dir, img_dir, and save_dir as directed in config.py
 
