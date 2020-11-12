@@ -2,6 +2,7 @@ EPOCHS = 60
 BATCH_SIZE = 32
 ensemble_num = 15
 
+# train for all tranches
 train_for_all = True
 
 # dir that contains label csv
