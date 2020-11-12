@@ -51,14 +51,6 @@ Required Packages:
 
   Fork of Keras image data generator which supports the 3rd party data augmentation modules
 
-#### API Reference
-
-```html
-    <p>dummy code</p>
-```
-
-
----
 
 ## References
 
