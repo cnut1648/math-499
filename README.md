@@ -2,7 +2,7 @@
 
 ## Contributors: 
 
-**Architecture: EfficientNetB0/MobileNet 
+**Architecture:** EfficientNetB0/MobileNet
 
 ---
 
