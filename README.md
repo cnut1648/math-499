@@ -4,6 +4,8 @@
 
 **Architecture:** EfficientNetB0/MobileNet
 
+---
+
 ***Default:***
   - Epoch: 60
   - Batch Size: 32
