@@ -3,11 +3,9 @@
 
 ***Contributors:*** Daniel Chaderjian, Jiashu Xu, Phillip Bliss, Sydney Yu, Terry Lu.
 
----
 
 **Architecture:** EfficientNetB0/MobileNet
 
----
 
 ***Default:***
   - Epoch: 60
