@@ -50,7 +50,8 @@ Required Packages:
 - [`imagedataaugmenter`](https://github.com/mjkvaak/ImageDataAugmentor) 
 
   Fork of Keras image data generator which supports the 3rd party data augmentation modules
-
+  
+  ---
 
 ## References
 
