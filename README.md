@@ -102,3 +102,11 @@ SOFTWARE.
 - Daniel Chaderjian, Jiashu Xu, Phillip Bliss, Sydney Yu, Terry Lu
 
 [Back To The Top](#MATH499-Final-Project-Team2)
+
+---
+
+## Full Documentation
+
+- [MATH499 Final Project Team2](
+https://docs.google.com/document/d/1N6RLE5okG_bNiMLmLjJ2Q8FPSLULe9cCZVQr0_sJsGw/edit?usp=sharing)
+
