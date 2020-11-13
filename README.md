@@ -24,8 +24,12 @@ This project trains on convolution networks with over ~40000 medical images prov
 #### Archetectures
 
 - MobileNet 
+
 - EfficientNetB0 
+
 - Team2Net
+
+    ![](imgs/team2net.png)
 
 
 
@@ -38,6 +42,7 @@ The execution of this code requires the change of label_dir,img_dir, and save_di
 - img_dir: the directory that contains all of the testing images, where images from tranch t must be in subfolder img_dir/tranch<t> and images for all tranchs must be in subfolder img_dir/allTranch.
 - save_dir: the directory used to save model checkpoints in save_dir/<tranch>/<model type>-<ensemble num>.<epoch>-<val acc>.h5
   
+
 Then, to execute, run train.py.
 
 #### Installation
