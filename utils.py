@@ -1,3 +1,4 @@
+# we use this function to merge the images in google colab
 # merge edge detected images with original imgs
 # result in images with 4 channel (RGB + Edge)
 def mergeImages():

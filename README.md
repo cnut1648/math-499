@@ -12,7 +12,6 @@ You're sections headers will be used to reference location of destination.
 - [Description](#description)
 - [How To Use](#how-to-use)
 - [References](#references)
-- [License](#license)
 - [Contributors](#Contributors)
 
 ---
@@ -46,6 +45,37 @@ The CNN architectures we used in this project is listed as follows:
     ![](imgs/team2net.png)
 
 
+
+### Data Augmentation
+
+In this project we use the data augmentation library `Albumentation`.
+
+Our data augmentation is 
+
+```python
+AUGMENTATIONS = A.Compose([
+    A.Rotate(limit=40),
+    A.OneOf([
+        A.RandomBrightnessContrast(brightness_limit=0.3, contrast_limit=0.3),
+        A.RandomBrightnessContrast(brightness_limit=0.1, contrast_limit=0.1)
+    ]),
+    A.OneOf([
+        A.ElasticTransform(alpha=224, sigma=224 * 0.05, alpha_affine=224 * 0.03),
+        A.GridDistortion(),
+        A.OpticalDistortion(distort_limit=2, shift_limit=0.5),
+    ], p=0.3),
+    A.HueSaturationValue(hue_shift_limit=20, sat_shift_limit=30, val_shift_limit=20, p=0.5),
+    A.RandomContrast(limit=0.2, p=0.5),
+    A.HorizontalFlip(),
+    A.ShiftScaleRotate(shift_limit=0.05, scale_limit=0.1, rotate_limit=10),
+])
+```
+
+During the training process we also add `Random_eraser`.
+
+The training takes 9.25 s per batch;
+
+and testing (without our `random_eraser` implementation) takes 8.65s per batch.
 
 ---
 
