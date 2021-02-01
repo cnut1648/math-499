@@ -1,6 +1,6 @@
 # MATH499 Final Project Team2
 
-![Project Image](https://www.researchgate.net/profile/Gearoid_OLaighin/publication/8567542/figure/fig1/AS:667210611691528@1536086814564/Discriminating-postures-a-standing-b-sitting-c-lying-The-arrows-indicate-the.png)
+![Project Image](https://3.bp.blogspot.com/-nTiEiW_7YWY/WNBICYFcQnI/AAAAAAAANjU/2mumhOzYRVoApwz5Lcb1EtvgFlkZDi6NACLcB/s1600/4e09a6fe10088.jpg)
 
 > This is a final deliverable for LookDeep Inc that determines huaman posture in a medical setting through convolution.
 
